@@ -4,16 +4,16 @@ body.modal-open {
 body.modal-open .modal {
     padding-right: 0 !important;
 }
-.tema-light{
-    background-repeat:no-repeat;
-    background-size:cover; 
-    background-attachment:fixed;
+#hero {
+    background-image: url(../img/fondo1.1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     transition: all 0.4s;
 }
 .tema-dark{
-    background-repeat:no-repeat;
-    background-size:cover; 
-    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     transition: all 0.4s;
 }
 .opacidad{
@@ -409,4 +409,9 @@ li{
     border-left: 0;
     border-right: 0;
     background: linear-gradient(to bottom, #ffffff00, black);
+}
+.wrap-text-none {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -8,6 +8,15 @@ const shadow = document.querySelector('#shadow-border');
 const btnNav1 = document.querySelector('#btn1');
 const btnNav2 = document.querySelector('#btn2');
 const iconoModo = document.querySelector('#icono');
+const logo = document.querySelector('svg');
+const logoSuperior = logo.querySelectorAll('stop');
+const colorLogoInferior = document.querySelectorAll('.st0');
+const colores = {
+    'primary' : ['#0255cc','#0686ef'],
+    'success' : ['#098a00','#13bf00'],
+    'danger' : ['#ac0000','#ff0000'],
+    'warning' : ['#ac8100','#ffbf00']
+};
 
 btnPrimary.addEventListener('click', () => {
 
@@ -59,6 +68,19 @@ btnPrimary.addEventListener('click', () => {
             // Opcional: Mostrar un mensaje de error al usuario
         }
     })();
+
+    colorLogoInferior.forEach(letra => {
+        letra.style.transition = 'all .4s';
+        letra.style.fill = colores['primary'][1];
+    });
+
+    logoSuperior.forEach(elemento =>{
+        if(elemento.getAttribute('offset') == 0){
+            elemento.style.stopColor = colores['primary'][0]
+        }else{
+            elemento.style.stopColor = colores['primary'][1]
+        }
+    });
 
 });
 
@@ -113,6 +135,19 @@ btnSuccess.addEventListener('click', () => {
         }
     })();
 
+    colorLogoInferior.forEach(letra => {
+        letra.style.transition = 'all .4s';
+        letra.style.fill = colores['success'][1];
+    });
+
+    logoSuperior.forEach(elemento =>{
+        if(elemento.getAttribute('offset') == 0){
+            elemento.style.stopColor = colores['success'][0]
+        }else{
+            elemento.style.stopColor = colores['success'][1]
+        }
+    });
+
 });
 
 btnWarning.addEventListener('click', () => {
@@ -166,6 +201,19 @@ btnWarning.addEventListener('click', () => {
         }
     })();
 
+    colorLogoInferior.forEach(letra => {
+        letra.style.transition = 'all .4s';
+        letra.style.fill = colores['warning'][1];
+    });
+
+    logoSuperior.forEach(elemento =>{
+        if(elemento.getAttribute('offset') == 0){
+            elemento.style.stopColor = colores['warning'][0]
+        }else{
+            elemento.style.stopColor = colores['warning'][1]
+        }
+    });
+
 });
 
 btnDanger.addEventListener('click', () => {
@@ -218,6 +266,21 @@ btnDanger.addEventListener('click', () => {
             // Opcional: Mostrar un mensaje de error al usuario
         }
     })();
+
+    colorLogoInferior.forEach(letra => {
+        letra.style.transition = 'all .4s';
+        letra.style.fill = colores['danger'][1];
+    });
+
+    logoSuperior.forEach(elemento =>{
+        if(elemento.getAttribute('offset') == 0){
+            elemento.style.stopColor = colores['danger'][0]
+            elemento.style.transition = 'all .4s';
+        }else{
+            elemento.style.stopColor = colores['danger'][1]
+            elemento.style.transition = 'all .4s';
+        }
+    });
 
 });
 
